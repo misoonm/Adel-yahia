@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     <style>
+        /* الأنماط لم يتم تغييرها */
         :root {
             --primary: #1a365d;
             --secondary: #2c5282;
@@ -833,7 +834,7 @@
             border-radius: var(--border-radius);
             box-shadow: var(--box-shadow);
             z-index: 1000;
-            display: flex;
+            display: none;
             align-items: center;
             gap: 10px;
             cursor: pointer;
@@ -886,7 +887,7 @@
         }
         
         .mobile-install-btn {
-            display: flex;
+            display: none;
             align-items: center;
             gap: 10px;
             padding: 10px 15px;
@@ -1331,8 +1332,7 @@
                             </tr>
                         </thead>
                         <tbody id="casesTableBody">
-                            <!-- سيتم ملؤها ديناميكياً -->
-                        </tbody>
+                            </tbody>
                     </table>
                 </div>
             </section>
@@ -1360,8 +1360,7 @@
                         </tr>
                     </thead>
                     <tbody id="casesTableBody2">
-                        <!-- سيتم ملؤها ديناميكياً -->
-                    </tbody>
+                        </tbody>
                 </table>
             </div>
         </div>
@@ -1399,14 +1398,12 @@
                 </div>
                 
                 <div class="calendar-grid" id="calendarGrid">
-                    <!-- سيتم ملؤه ديناميكياً -->
-                </div>
+                    </div>
             </div>
             
             <h3 class="section-subtitle">مواعيد اليوم</h3>
             <div id="appointmentsList">
-                <!-- سيتم ملؤها ديناميكياً -->
-            </div>
+                </div>
         </div>
     </div>
 
@@ -1438,8 +1435,7 @@
             
             <h3 class="section-subtitle">آخر المستندات المضافة</h3>
             <div id="documentsList">
-                <!-- سيتم ملؤها ديناميكياً -->
-            </div>
+                </div>
         </div>
     </div>
 
@@ -1457,8 +1453,7 @@
             </div>
             
             <div id="clientsList">
-                <!-- سيتم ملؤها ديناميكياً -->
-            </div>
+                </div>
         </div>
     </div>
 
@@ -1532,12 +1527,10 @@
             </div>
             
             <div id="favoritesContent">
-                <!-- سيتم ملؤه ديناميكياً -->
-            </div>
+                </div>
         </div>
     </div>
 
-    <!-- نماذج الإضافة والتعديل -->
     <div class="modal" id="caseModal">
         <div class="modal-content">
             <div class="modal-header">
@@ -1651,8 +1644,7 @@
                             <label for="appointmentClient">العميل</label>
                             <select id="appointmentClient" required>
                                 <option value="">اختر عميلاً</option>
-                                <!-- سيتم ملؤه ديناميكياً -->
-                            </select>
+                                </select>
                         </div>
                         
                         <div class="form-group">
@@ -1805,8 +1797,7 @@
                             <label for="documentCase">القضية المرتبطة</label>
                             <select id="documentCase">
                                 <option value="">اختر قضية (اختياري)</option>
-                                <!-- سيتم ملؤه ديناميكياً -->
-                            </select>
+                                </select>
                         </div>
                         
                         <div class="form-group">
@@ -2793,8 +2784,7 @@
                                 </tr>
                             </thead>
                             <tbody id="favoriteCasesTable">
-                                <!-- سيتم ملؤها ديناميكياً -->
-                            </tbody>
+                                </tbody>
                         </table>
                     </div>
                 `;
@@ -2850,8 +2840,7 @@
                         </div>
                     </div>
                     <div id="favoriteAppointmentsList">
-                        <!-- سيتم ملؤها ديناميكياً -->
-                    </div>
+                        </div>
                 `;
                 
                 const favoriteAppointmentsList = document.getElementById('favoriteAppointmentsList');
@@ -2897,8 +2886,7 @@
                         </div>
                     </div>
                     <div id="favoriteClientsList">
-                        <!-- سيتم ملؤها ديناميكياً -->
-                    </div>
+                        </div>
                 `;
                 
                 const favoriteClientsList = document.getElementById('favoriteClientsList');
@@ -3296,3 +3284,4 @@
     </script>
 </body>
 </html>
+
