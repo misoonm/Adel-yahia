@@ -929,7 +929,7 @@
         
         .page-section.active {
             display: block;
-            animation: fadeIn 0.5s ease;
+            animation: fadeIn 0.6s ease;
         }
         
         /* تقويم المواعيد */
@@ -1199,7 +1199,6 @@
     </style>
 </head>
 <body>
-    <!-- الشريط العلوي -->
     <header>
         <div class="container">
             <div class="header-content">
@@ -1211,13 +1210,13 @@
                 </div>
                 
                 <nav class="nav-links">
-                    <a href="#home" class="active" data-page="home"><i class="fas fa-home"></i> الرئيسية</a>
-                    <a href="#cases" data-page="cases"><i class="fas fa-gavel"></i> القضايا</a>
-                    <a href="#appointments" data-page="appointments"><i class="fas fa-calendar"></i> المواعيد</a>
-                    <a href="#documents" data-page="documents"><i class="fas fa-file-contract"></i> المستندات</a>
-                    <a href="#clients" data-page="clients"><i class="fas fa-user"></i> العملاء</a>
-                    <a href="#settings" data-page="settings"><i class="fas fa-cog"></i> الإعدادات</a>
-                    <button class="favorites-btn">
+                    <a href="#" class="active nav-link" data-page="home"><i class="fas fa-home"></i> الرئيسية</a>
+                    <a href="#" class="nav-link" data-page="cases"><i class="fas fa-gavel"></i> القضايا</a>
+                    <a href="#" class="nav-link" data-page="appointments"><i class="fas fa-calendar"></i> المواعيد</a>
+                    <a href="#" class="nav-link" data-page="documents"><i class="fas fa-file-contract"></i> المستندات</a>
+                    <a href="#" class="nav-link" data-page="clients"><i class="fas fa-user"></i> العملاء</a>
+                    <a href="#" class="nav-link" data-page="settings"><i class="fas fa-cog"></i> الإعدادات</a>
+                    <button class="favorites-btn" id="favoritesBtn">
                         <i class="fas fa-star"></i>
                         <span class="favorites-count">0</span>
                     </button>
@@ -1230,26 +1229,23 @@
         </div>
     </header>
 
-    <!-- إشعار العمل دون اتصال -->
     <div class="offline-banner" id="offlineBanner">
         <i class="fas fa-wifi"></i> أنت تعمل دون اتصال بالإنترنت. سيتم حفظ التغييرات محلياً على جهازك.
     </div>
 
-    <!-- زر التثبيت -->
     <div class="install-btn" id="installBtn">
         <i class="fas fa-download"></i> تثبيت التطبيق
     </div>
 
-    <!-- القائمة الجانبية للجوال -->
     <div class="mobile-nav">
         <div class="mobile-nav-links">
-            <a href="#home" class="active" data-page="home"><i class="fas fa-home"></i> الرئيسية</a>
-            <a href="#cases" data-page="cases"><i class="fas fa-gavel"></i> القضايا</a>
-            <a href="#appointments" data-page="appointments"><i class="fas fa-calendar"></i> المواعيد</a>
-            <a href="#documents" data-page="documents"><i class="fas fa-file-contract"></i> المستندات</a>
-            <a href="#clients" data-page="clients"><i class="fas fa-user"></i> العملاء</a>
-            <a href="#settings" data-page="settings"><i class="fas fa-cog"></i> الإعدادات</a>
-            <a href="#" data-page="favorites"><i class="fas fa-star"></i> المفضلة</a>
+            <a href="#" class="active nav-link" data-page="home"><i class="fas fa-home"></i> الرئيسية</a>
+            <a href="#" class="nav-link" data-page="cases"><i class="fas fa-gavel"></i> القضايا</a>
+            <a href="#" class="nav-link" data-page="appointments"><i class="fas fa-calendar"></i> المواعيد</a>
+            <a href="#" class="nav-link" data-page="documents"><i class="fas fa-file-contract"></i> المستندات</a>
+            <a href="#" class="nav-link" data-page="clients"><i class="fas fa-user"></i> العملاء</a>
+            <a href="#" class="nav-link" data-page="settings"><i class="fas fa-cog"></i> الإعدادات</a>
+            <a href="#" class="nav-link" data-page="favorites"><i class="fas fa-star"></i> المفضلة</a>
             
             <div class="install-notice">
                 <p>لتجربة أفضل، قم بتثبيت التطبيق على جهازك</p>
@@ -1260,15 +1256,12 @@
         </div>
     </div>
 
-    <!-- مؤشر التحميل -->
     <div class="loader">
         <div class="loader-spinner"></div>
     </div>
 
-    <!-- قسم الصفحة الرئيسية -->
     <div id="home" class="page-section active">
         <div class="container">
-            <!-- إحصائيات القضايا -->
             <section class="stats-section fade-in">
                 <h2 class="section-title">نظرة عامة على القضايا</h2>
                 <div class="stats-container">
@@ -1291,7 +1284,6 @@
                     </div>
                 </div>
                 
-                <!-- أدوات البحث والفلترة -->
                 <div class="tools-section fade-in">
                     <div class="tools-grid">
                         <div class="search-box">
@@ -1309,7 +1301,6 @@
                     </div>
                 </div>
                 
-                <!-- إرشادات تثبيت PWA -->
                 <div class="pwa-instructions">
                     <h3><i class="fas fa-mobile-alt"></i> تثبيت التطبيق على جهازك</h3>
                     <p>لتجربة أفضل، يمكنك تثبيت هذا التطبيق على جهازك الأندرويد:</p>
@@ -1322,7 +1313,6 @@
                 </div>
             </section>
             
-            <!-- جدول القضايا -->
             <section class="cases-section fade-in">
                 <h2 class="section-title">قائمة القضايا</h2>
                 <div style="overflow-x: auto;">
@@ -1341,7 +1331,7 @@
                             </tr>
                         </thead>
                         <tbody id="casesTableBody">
-                            <!-- سيتم ملء البيانات باستخدام JavaScript -->
+                            <!-- سيتم ملؤها ديناميكياً -->
                         </tbody>
                     </table>
                 </div>
@@ -1349,7 +1339,6 @@
         </div>
     </div>
 
-    <!-- قسم القضايا -->
     <div id="cases" class="page-section">
         <div class="container">
             <h2 class="section-title">إدارة القضايا</h2>
@@ -1371,14 +1360,13 @@
                         </tr>
                     </thead>
                     <tbody id="casesTableBody2">
-                        <!-- سيتم ملء البيانات باستخدام JavaScript -->
+                        <!-- سيتم ملؤها ديناميكياً -->
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
 
-    <!-- قسم المواعيد -->
     <div id="appointments" class="page-section">
         <div class="container">
             <h2 class="section-title">إدارة المواعيد</h2>
@@ -1391,220 +1379,44 @@
             <div class="stats-container">
                 <div class="stat-card">
                     <i class="fas fa-calendar-check stat-icon"></i>
-                    <div class="stat-value" id="todayAppointments">5</div>
+                    <div class="stat-value" id="todayAppointments">0</div>
                     <div class="stat-label">مواعيد اليوم</div>
                 </div>
                 <div class="stat-card">
                     <i class="fas fa-clock stat-icon"></i>
-                    <div class="stat-value" id="upcomingAppointments">12</div>
+                    <div class="stat-value" id="upcomingAppointments">0</div>
                     <div class="stat-label">مواعيد قادمة</div>
                 </div>
             </div>
             
-            <!-- تقويم المواعيد -->
             <div class="calendar-section fade-in">
                 <div class="calendar-header">
-                    <h3 class="section-subtitle">أغسطس 2025</h3>
+                    <h3 class="section-subtitle" id="calendarMonthTitle">أغسطس 2025</h3>
                     <div class="calendar-nav">
-                        <button class="btn"><i class="fas fa-chevron-right"></i></button>
-                        <button class="btn"><i class="fas fa-chevron-left"></i></button>
+                        <button class="btn" id="prevMonthBtn"><i class="fas fa-chevron-right"></i></button>
+                        <button class="btn" id="nextMonthBtn"><i class="fas fa-chevron-left"></i></button>
                     </div>
                 </div>
                 
-                <div class="calendar-grid">
-                    <div class="calendar-day">الأحد</div>
-                    <div class="calendar-day">الاثنين</div>
-                    <div class="calendar-day">الثلاثاء</div>
-                    <div class="calendar-day">الأربعاء</div>
-                    <div class="calendar-day">الخميس</div>
-                    <div class="calendar-day">الجمعة</div>
-                    <div class="calendar-day">السبت</div>
-                    
-                    <!-- سيتم إنشاء الخلايا باستخدام JavaScript -->
-                    <div class="calendar-cell"></div>
-                    <div class="calendar-cell"></div>
-                    <div class="calendar-cell"></div>
-                    <div class="calendar-cell"></div>
-                    <div class="calendar-cell today">
-                        <div class="date">1</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">2</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">3</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">4</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">5</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">6</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">7</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">8</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">9</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">10</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">11</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">12</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">13</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">14</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">15</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">16</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">17</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">18</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">19</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">20</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">21</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">22</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">23</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">24</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">25</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">26</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">27</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">28</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">29</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">30</div>
-                        <div class="appointment-badge"></div>
-                    </div>
-                    <div class="calendar-cell">
-                        <div class="date">31</div>
-                        <div class="appointment-badge"></div>
-                    </div>
+                <div class="calendar-grid" id="calendarGrid">
+                    <!-- سيتم ملؤه ديناميكياً -->
                 </div>
             </div>
             
-            <!-- قائمة المواعيد -->
             <h3 class="section-subtitle">مواعيد اليوم</h3>
             <div id="appointmentsList">
-                <div class="appointment-card">
-                    <div>
-                        <div class="appointment-time">09:00 صباحاً</div>
-                        <div class="appointment-client">محمد أحمد عبد الله</div>
-                        <div class="appointment-purpose">مراجعة وثائق القضية الجنائية</div>
-                    </div>
-                    <div>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-edit"></i></button>
-                        <button class="action-btn"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-                
-                <div class="appointment-card urgent">
-                    <div>
-                        <div class="appointment-time">11:30 صباحاً</div>
-                        <div class="appointment-client">سارة خالد حسين</div>
-                        <div class="appointment-purpose">جلسة المحكمة - قضية الأحوال الشخصية</div>
-                    </div>
-                    <div>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-edit"></i></button>
-                        <button class="action-btn"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-                
-                <div class="appointment-card">
-                    <div>
-                        <div class="appointment-time">03:00 مساءً</div>
-                        <div class="appointment-client">شركة التقنية المتطورة</div>
-                        <div class="appointment-purpose">مناقشة عقد الشراكة التجارية</div>
-                    </div>
-                    <div>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-edit"></i></button>
-                        <button class="action-btn"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
+                <!-- سيتم ملؤها ديناميكياً -->
             </div>
         </div>
     </div>
 
-    <!-- قسم المستندات -->
     <div id="documents" class="page-section">
         <div class="container">
             <h2 class="section-title">إدارة المستندات</h2>
             <div class="tools-section">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="ابحث عن مستند...">
+                    <input type="text" id="documentSearch" placeholder="ابحث عن مستند...">
                 </div>
                 <button class="btn btn-accent" id="uploadDocumentBtn">
                     <i class="fas fa-plus"></i> رفع مستند جديد
@@ -1614,150 +1426,42 @@
             <div class="stats-container">
                 <div class="stat-card">
                     <i class="fas fa-file-pdf stat-icon"></i>
-                    <div class="stat-value">142</div>
+                    <div class="stat-value" id="pdfDocuments">0</div>
                     <div class="stat-label">مستندات PDF</div>
                 </div>
                 <div class="stat-card">
                     <i class="fas fa-file-word stat-icon"></i>
-                    <div class="stat-value">85</div>
+                    <div class="stat-value" id="wordDocuments">0</div>
                     <div class="stat-label">مستندات Word</div>
                 </div>
             </div>
             
-            <!-- قائمة المستندات -->
             <h3 class="section-subtitle">آخر المستندات المضافة</h3>
             <div id="documentsList">
-                <div class="document-card">
-                    <i class="fas fa-file-pdf document-icon"></i>
-                    <div class="document-info">
-                        <div class="document-name">مذكرة دفاع - القضية الجنائية رقم C-2023-145.pdf</div>
-                        <div class="document-meta">
-                            <span>حجم الملف: 2.4 ميجابايت</span>
-                            <span>تاريخ الرفع: 10 أغسطس 2025</span>
-                            <span>مرتبط بالقضية: C-2023-145</span>
-                        </div>
-                    </div>
-                    <div>
-                        <button class="action-btn"><i class="fas fa-download"></i></button>
-                        <button class="action-btn"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-                
-                <div class="document-card">
-                    <i class="fas fa-file-word document-icon"></i>
-                    <div class="document-info">
-                        <div class="document-name">عقد شراكة تجارية - شركة التقنية المتطورة.docx</div>
-                        <div class="document-meta">
-                            <span>حجم الملف: 1.1 ميجابايت</span>
-                            <span>تاريخ الرفع: 8 أغسطس 2025</span>
-                            <span>مرتبط بالقضية: C-2023-128</span>
-                        </div>
-                    </div>
-                    <div>
-                        <button class="action-btn"><i class="fas fa-download"></i></button>
-                        <button class="action-btn"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-                
-                <div class="document-card">
-                    <i class="fas fa-file-pdf document-icon"></i>
-                    <div class="document-info">
-                        <div class="document-name">حكم المحكمة - قضية الأحوال الشخصية رقم F-2023-078.pdf</div>
-                        <div class="document-meta">
-                            <span>حجم الملف: 3.2 ميجابايت</span>
-                            <span>تاريخ الرفع: 5 أغسطس 2025</span>
-                            <span>مرتبط بالقضية: F-2023-078</span>
-                        </div>
-                    </div>
-                    <div>
-                        <button class="action-btn"><i class="fas fa-download"></i></button>
-                        <button class="action-btn"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
+                <!-- سيتم ملؤها ديناميكياً -->
             </div>
         </div>
     </div>
 
-    <!-- قسم العملاء -->
     <div id="clients" class="page-section">
         <div class="container">
             <h2 class="section-title">إدارة العملاء</h2>
             <div class="tools-section">
                 <div class="search-box">
                     <i class="fas fa-search"></i>
-                    <input type="text" placeholder="ابحث عن عميل...">
+                    <input type="text" id="clientSearch" placeholder="ابحث عن عميل...">
                 </div>
                 <button class="btn btn-accent" id="newClientBtn">
                     <i class="fas fa-plus"></i> إضافة عميل جديد
                 </button>
             </div>
             
-            <!-- قائمة العملاء -->
             <div id="clientsList">
-                <div class="client-card">
-                    <div class="client-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-name">محمد أحمد عبد الله</div>
-                        <div>+966123456789</div>
-                        <div>mohamed@example.com</div>
-                        <div class="client-meta">
-                            <span class="client-cases">5 قضايا</span>
-                            <span>آخر تواصل: 12 أغسطس 2025</span>
-                        </div>
-                    </div>
-                    <div>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-edit"></i></button>
-                        <button class="action-btn"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-                
-                <div class="client-card">
-                    <div class="client-avatar">
-                        <i class="fas fa-user"></i>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-name">سارة خالد حسين</div>
-                        <div>+966987654321</div>
-                        <div>sara@example.com</div>
-                        <div class="client-meta">
-                            <span class="client-cases">3 قضايا</span>
-                            <span>آخر تواصل: 10 أغسطس 2025</span>
-                        </div>
-                    </div>
-                    <div>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-edit"></i></button>
-                        <button class="action-btn"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
-                
-                <div class="client-card">
-                    <div class="client-avatar">
-                        <i class="fas fa-building"></i>
-                    </div>
-                    <div class="client-info">
-                        <div class="client-name">شركة التقنية المتطورة</div>
-                        <div>+966112233445</div>
-                        <div>contact@tech-advanced.com</div>
-                        <div class="client-meta">
-                            <span class="client-cases">8 قضايا</span>
-                            <span>آخر تواصل: 8 أغسطس 2025</span>
-                        </div>
-                    </div>
-                    <div>
-                        <button class="action-btn"><i class="fas fa-eye"></i></button>
-                        <button class="action-btn"><i class="fas fa-edit"></i></button>
-                        <button class="action-btn"><i class="fas fa-trash"></i></button>
-                    </div>
-                </div>
+                <!-- سيتم ملؤها ديناميكياً -->
             </div>
         </div>
     </div>
 
-    <!-- قسم الإعدادات -->
     <div id="settings" class="page-section">
         <div class="container">
             <h2 class="section-title">الإعدادات</h2>
@@ -1795,15 +1499,15 @@
                     <label>إشعارات التطبيق</label>
                     <div style="display: flex; gap: 15px;">
                         <label>
-                            <input type="checkbox" checked> 
+                            <input type="checkbox" id="appointmentNotifications" checked> 
                             إشعارات المواعيد
                         </label>
                         <label>
-                            <input type="checkbox" checked> 
+                            <input type="checkbox" id="caseNotifications" checked> 
                             إشعارات القضايا
                         </label>
                         <label>
-                            <input type="checkbox"> 
+                            <input type="checkbox" id="clientNotifications"> 
                             إشعارات العملاء
                         </label>
                     </div>
@@ -1812,19 +1516,41 @@
         </div>
     </div>
 
-    <!-- نموذج إضافة قضية جديدة -->
+    <div id="favorites" class="page-section">
+        <div class="container">
+            <h2 class="section-title">العناصر المفضلة</h2>
+            <div class="tools-section">
+                <button class="btn btn-primary" id="showFavoriteCases">
+                    <i class="fas fa-gavel"></i> القضايا المفضلة
+                </button>
+                <button class="btn btn-primary" id="showFavoriteAppointments">
+                    <i class="fas fa-calendar"></i> المواعيد المفضلة
+                </button>
+                <button class="btn btn-primary" id="showFavoriteClients">
+                    <i class="fas fa-user"></i> العملاء المفضلين
+                </button>
+            </div>
+            
+            <div id="favoritesContent">
+                <!-- سيتم ملؤه ديناميكياً -->
+            </div>
+        </div>
+    </div>
+
+    <!-- نماذج الإضافة والتعديل -->
     <div class="modal" id="caseModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">تسجيل قضية جديدة</h3>
+                <h3 class="modal-title" id="caseModalTitle">تسجيل قضية جديدة</h3>
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
                 <form id="caseForm">
+                    <input type="hidden" id="caseId">
                     <div class="form-grid">
                         <div class="form-group">
-                            <label for="caseId">رقم القضية (ID)</label>
-                            <input type="text" id="caseId" required>
+                            <label for="caseNumber">رقم القضية (ID)</label>
+                            <input type="text" id="caseNumber" required>
                         </div>
                         
                         <div class="form-group">
@@ -1911,23 +1637,21 @@
         </div>
     </div>
 
-    <!-- نموذج إضافة موعد جديد -->
     <div class="modal" id="appointmentModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">إضافة موعد جديد</h3>
+                <h3 class="modal-title" id="appointmentModalTitle">إضافة موعد جديد</h3>
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
                 <form id="appointmentForm">
+                    <input type="hidden" id="appointmentId">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="appointmentClient">العميل</label>
                             <select id="appointmentClient" required>
                                 <option value="">اختر عميلاً</option>
-                                <option value="1">محمد أحمد عبد الله</option>
-                                <option value="2">سارة خالد حسين</option>
-                                <option value="3">شركة التقنية المتطورة</option>
+                                <!-- سيتم ملؤه ديناميكياً -->
                             </select>
                         </div>
                         
@@ -1964,6 +1688,13 @@
                                 موعد عاجل
                             </label>
                         </div>
+                        
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" id="appointmentFavorite"> 
+                                إضافة للمفضلة
+                            </label>
+                        </div>
                     </div>
                     
                     <div class="form-group">
@@ -1982,15 +1713,15 @@
         </div>
     </div>
 
-    <!-- نموذج إضافة عميل جديد -->
     <div class="modal" id="clientModal">
         <div class="modal-content">
             <div class="modal-header">
-                <h3 class="modal-title">إضافة عميل جديد</h3>
+                <h3 class="modal-title" id="clientModalTitle">إضافة عميل جديد</h3>
                 <button class="close-modal">&times;</button>
             </div>
             <div class="modal-body">
                 <form id="clientForm">
+                    <input type="hidden" id="clientId">
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="clientType">نوع العميل</label>
@@ -2002,8 +1733,8 @@
                         </div>
                         
                         <div class="form-group">
-                            <label for="clientName">الاسم الكامل / اسم الشركة</label>
-                            <input type="text" id="clientName" required>
+                            <label for="clientFullName">الاسم الكامل / اسم الشركة</label>
+                            <input type="text" id="clientFullName" required>
                         </div>
                         
                         <div class="form-group">
@@ -2043,7 +1774,74 @@
         </div>
     </div>
 
-    <!-- نموذج فلترة القضايا -->
+    <div class="modal" id="documentModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="documentModalTitle">رفع مستند جديد</h3>
+                <button class="close-modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="documentForm">
+                    <input type="hidden" id="documentId">
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="documentName">اسم المستند</label>
+                            <input type="text" id="documentName" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="documentType">نوع المستند</label>
+                            <select id="documentType" required>
+                                <option value="">اختر نوع المستند</option>
+                                <option value="PDF">PDF</option>
+                                <option value="Word">Word</option>
+                                <option value="Excel">Excel</option>
+                                <option value="صورة">صورة</option>
+                                <option value="آخر">آخر</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="documentCase">القضية المرتبطة</label>
+                            <select id="documentCase">
+                                <option value="">اختر قضية (اختياري)</option>
+                                <!-- سيتم ملؤه ديناميكياً -->
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="documentDate">تاريخ الرفع</label>
+                            <input type="date" id="documentDate" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="documentDescription">وصف المستند</label>
+                        <textarea id="documentDescription"></textarea>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label>رفع الملف</label>
+                        <div class="file-upload" id="documentFileUpload">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                            <p>اسحب وأسقط الملف هنا أو</p>
+                            <span>تصفح الملفات</span>
+                            <input type="file" id="documentFile" style="display: none;">
+                        </div>
+                        <div id="documentFileList" class="form-group"></div>
+                    </div>
+                    
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-lg" id="cancelDocumentBtn">إلغاء</button>
+                        <button type="submit" class="btn btn-primary btn-lg">
+                            <i class="fas fa-save"></i> حفظ المستند
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <div class="filter-modal" id="filterModal">
         <div class="filter-content">
             <div class="filter-header">
@@ -2092,7 +1890,7 @@
                     <label for="filterClosed">منتهية</label>
                 </div>
                 <div class="filter-option">
-                    <input type="checkbox" id="filterFavorites" checked>
+                    <input type="checkbox" id="filterFavorites">
                     <label for="filterFavorites">المفضلة فقط</label>
                 </div>
             </div>
@@ -2108,8 +1906,7 @@
         // إدارة قاعدة البيانات المحلية باستخدام IndexedDB
         let db;
         const DB_NAME = 'CaseManagementDB';
-        const STORE_NAME = 'cases';
-        const DB_VERSION = 1;
+        const DB_VERSION = 3;
 
         // تهيئة قاعدة البيانات
         function initDB() {
@@ -2118,13 +1915,42 @@
                 
                 request.onupgradeneeded = function(event) {
                     db = event.target.result;
-                    if (!db.objectStoreNames.contains(STORE_NAME)) {
-                        const store = db.createObjectStore(STORE_NAME, { keyPath: 'id' });
+                    
+                    // إنشاء مخزن القضايا
+                    if (!db.objectStoreNames.contains('cases')) {
+                        const store = db.createObjectStore('cases', { keyPath: 'id', autoIncrement: true });
                         store.createIndex('client', 'client', { unique: false });
                         store.createIndex('type', 'type', { unique: false });
                         store.createIndex('status', 'status', { unique: false });
                         store.createIndex('favorite', 'favorite', { unique: false });
                         store.createIndex('registrationDate', 'registrationDate', { unique: false });
+                    }
+                    
+                    // إنشاء مخزن المواعيد
+                    if (!db.objectStoreNames.contains('appointments')) {
+                        const store = db.createObjectStore('appointments', { keyPath: 'id', autoIncrement: true });
+                        store.createIndex('client', 'client', { unique: false });
+                        store.createIndex('date', 'date', { unique: false });
+                        store.createIndex('time', 'time', { unique: false });
+                        store.createIndex('urgent', 'urgent', { unique: false });
+                        store.createIndex('favorite', 'favorite', { unique: false });
+                    }
+                    
+                    // إنشاء مخزن المستندات
+                    if (!db.objectStoreNames.contains('documents')) {
+                        const store = db.createObjectStore('documents', { keyPath: 'id', autoIncrement: true });
+                        store.createIndex('name', 'name', { unique: false });
+                        store.createIndex('type', 'type', { unique: false });
+                        store.createIndex('uploadDate', 'uploadDate', { unique: false });
+                        store.createIndex('caseId', 'caseId', { unique: false });
+                    }
+                    
+                    // إنشاء مخزن العملاء
+                    if (!db.objectStoreNames.contains('clients')) {
+                        const store = db.createObjectStore('clients', { keyPath: 'id', autoIncrement: true });
+                        store.createIndex('name', 'name', { unique: false });
+                        store.createIndex('type', 'type', { unique: false });
+                        store.createIndex('phone', 'phone', { unique: false });
                     }
                 };
                 
@@ -2140,23 +1966,23 @@
             });
         }
 
-        // حفظ القضية في قاعدة البيانات
-        function saveCase(caseData) {
+        // الدوال العامة للتعامل مع قاعدة البيانات
+        function saveData(storeName, data) {
             return new Promise((resolve, reject) => {
-                const transaction = db.transaction([STORE_NAME], 'readwrite');
-                const store = transaction.objectStore(STORE_NAME);
-                const request = store.put(caseData);
+                const transaction = db.transaction([storeName], 'readwrite');
+                const store = transaction.objectStore(storeName);
                 
-                request.onsuccess = () => resolve();
+                const request = store.put(data);
+                
+                request.onsuccess = () => resolve(request.result);
                 request.onerror = (event) => reject(event.target.error);
             });
         }
 
-        // جلب جميع القضايا من قاعدة البيانات
-        function getAllCases() {
+        function getAllData(storeName) {
             return new Promise((resolve, reject) => {
-                const transaction = db.transaction([STORE_NAME], 'readonly');
-                const store = transaction.objectStore(STORE_NAME);
+                const transaction = db.transaction([storeName], 'readonly');
+                const store = transaction.objectStore(storeName);
                 const request = store.getAll();
                 
                 request.onsuccess = () => resolve(request.result);
@@ -2164,12 +1990,22 @@
             });
         }
 
-        // حذف القضية من قاعدة البيانات
-        function deleteCase(caseId) {
+        function getDataById(storeName, id) {
             return new Promise((resolve, reject) => {
-                const transaction = db.transaction([STORE_NAME], 'readwrite');
-                const store = transaction.objectStore(STORE_NAME);
-                const request = store.delete(caseId);
+                const transaction = db.transaction([storeName], 'readonly');
+                const store = transaction.objectStore(storeName);
+                const request = store.get(id);
+                
+                request.onsuccess = () => resolve(request.result);
+                request.onerror = (event) => reject(event.target.error);
+            });
+        }
+
+        function deleteData(storeName, id) {
+            return new Promise((resolve, reject) => {
+                const transaction = db.transaction([storeName], 'readwrite');
+                const store = transaction.objectStore(storeName);
+                const request = store.delete(id);
                 
                 request.onsuccess = () => resolve();
                 request.onerror = (event) => reject(event.target.error);
@@ -2178,6 +2014,7 @@
 
         // DOM Elements
         const casesTableBody = document.getElementById('casesTableBody');
+        const casesTableBody2 = document.getElementById('casesTableBody2');
         const totalCasesElement = document.getElementById('totalCases');
         const activeCasesElement = document.getElementById('activeCases');
         const completedCasesElement = document.getElementById('completedCases');
@@ -2188,9 +2025,6 @@
         const caseModal = document.getElementById('caseModal');
         const filterModal = document.getElementById('filterModal');
         const caseForm = document.getElementById('caseForm');
-        const fileUpload = document.getElementById('fileUpload');
-        const caseFiles = document.getElementById('caseFiles');
-        const fileList = document.getElementById('fileList');
         const favoritesCount = document.querySelector('.favorites-count');
         const loader = document.querySelector('.loader');
         const offlineBanner = document.getElementById('offlineBanner');
@@ -2198,17 +2032,103 @@
         const mobileInstallBtn = document.getElementById('mobileInstallBtn');
         const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
         const mobileNav = document.querySelector('.mobile-nav');
-        const navLinks = document.querySelectorAll('.nav-links a, .mobile-nav-links a');
+        const navLinks = document.querySelectorAll('.nav-link');
         const pageSections = document.querySelectorAll('.page-section');
         const newAppointmentBtn = document.getElementById('newAppointmentBtn');
         const appointmentModal = document.getElementById('appointmentModal');
+        const appointmentForm = document.getElementById('appointmentForm');
         const newClientBtn = document.getElementById('newClientBtn');
         const clientModal = document.getElementById('clientModal');
+        const clientForm = document.getElementById('clientForm');
+        const uploadDocumentBtn = document.getElementById('uploadDocumentBtn');
+        const documentModal = document.getElementById('documentModal');
+        const documentForm = document.getElementById('documentForm');
         const themeSelect = document.getElementById('themeSelect');
         const languageSelect = document.getElementById('languageSelect');
+        const todayAppointmentsElement = document.getElementById('todayAppointments');
+        const upcomingAppointmentsElement = document.getElementById('upcomingAppointments');
+        const appointmentsList = document.getElementById('appointmentsList');
+        const calendarGrid = document.getElementById('calendarGrid');
+        const calendarMonthTitle = document.getElementById('calendarMonthTitle');
+        const prevMonthBtn = document.getElementById('prevMonthBtn');
+        const nextMonthBtn = document.getElementById('nextMonthBtn');
+        const favoritesBtn = document.getElementById('favoritesBtn');
+        const favoritesPage = document.getElementById('favorites');
+        const favoritesContent = document.getElementById('favoritesContent');
+        const showFavoriteCasesBtn = document.getElementById('showFavoriteCases');
+        const showFavoriteAppointmentsBtn = document.getElementById('showFavoriteAppointments');
+        const showFavoriteClientsBtn = document.getElementById('showFavoriteClients');
+        const pdfDocumentsElement = document.getElementById('pdfDocuments');
+        const wordDocumentsElement = document.getElementById('wordDocuments');
+        const documentsList = document.getElementById('documentsList');
+        const clientsList = document.getElementById('clientsList');
+        const documentSearch = document.getElementById('documentSearch');
+        const clientSearch = document.getElementById('clientSearch');
 
-        // متغير لتخزين حالات التثبيت
-        let deferredPrompt;
+        // متغيرات التطبيق
+        let currentPage = 'home';
+        let currentMonth = new Date().getMonth();
+        let currentYear = new Date().getFullYear();
+        let selectedDate = new Date();
+        let editingItemId = null;
+
+        // تهيئة التاريخ الحالي
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('registrationDate').value = today;
+        document.getElementById('updateDate').value = today;
+        document.getElementById('appointmentDate').value = today;
+        document.getElementById('documentDate').value = today;
+
+        // إدارة التنقل بين الصفحات
+        navLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const page = link.getAttribute('data-page');
+                showPage(page);
+            });
+        });
+
+        function showPage(page) {
+            // إخفاء جميع الصفحات
+            pageSections.forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // إزالة النشط من جميع الروابط
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // إضافة النشط للرابط الحالي
+            document.querySelector(`.nav-link[data-page="${page}"]`).classList.add('active');
+            
+            // إظهار الصفحة المطلوبة
+            document.getElementById(page).classList.add('active');
+            currentPage = page;
+            
+            // تحميل البيانات الخاصة بالصفحة
+            switch(page) {
+                case 'home':
+                    loadCases();
+                    break;
+                case 'cases':
+                    loadCases('casesTableBody2');
+                    break;
+                case 'appointments':
+                    loadCalendar();
+                    loadAppointments();
+                    break;
+                case 'documents':
+                    loadDocuments();
+                    break;
+                case 'clients':
+                    loadClients();
+                    break;
+                case 'favorites':
+                    showFavoriteCases();
+                    break;
+            }
+        }
 
         // فتح وإغلاق القائمة الجانبية للجوال
         mobileMenuBtn.addEventListener('click', () => {
@@ -2223,125 +2143,387 @@
         });
 
         // فتح وإغلاق النماذج
-        newCaseBtn.addEventListener('click', () => {
-            caseModal.classList.add('active');
-        });
-
-        newCaseBtn2.addEventListener('click', () => {
-            caseModal.classList.add('active');
-        });
-
-        newAppointmentBtn.addEventListener('click', () => {
-            appointmentModal.classList.add('active');
-        });
-
-        newClientBtn.addEventListener('click', () => {
-            clientModal.classList.add('active');
-        });
-
-        filterBtn.addEventListener('click', () => {
-            filterModal.classList.add('active');
-        });
+        newCaseBtn.addEventListener('click', () => openCaseModal());
+        newCaseBtn2.addEventListener('click', () => openCaseModal());
+        newAppointmentBtn.addEventListener('click', () => openAppointmentModal());
+        newClientBtn.addEventListener('click', () => openClientModal());
+        uploadDocumentBtn.addEventListener('click', () => openDocumentModal());
+        filterBtn.addEventListener('click', () => filterModal.classList.add('active'));
 
         document.querySelectorAll('.close-modal, #cancelBtn').forEach(btn => {
             btn.addEventListener('click', () => {
                 caseModal.classList.remove('active');
                 appointmentModal.classList.remove('active');
                 clientModal.classList.remove('active');
+                documentModal.classList.remove('active');
             });
         });
 
-        document.getElementById('cancelAppointmentBtn').addEventListener('click', () => {
-            appointmentModal.classList.remove('active');
-        });
-
-        document.getElementById('cancelClientBtn').addEventListener('click', () => {
-            clientModal.classList.remove('active');
-        });
-
-        document.getElementById('filterClose').addEventListener('click', () => {
-            filterModal.classList.remove('active');
-        });
-
-        // التنقل بين الصفحات
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetPage = link.getAttribute('data-page');
-                
-                // إخفاء جميع الأقسام
-                pageSections.forEach(section => {
-                    section.classList.remove('active');
-                });
-                
-                // إظهار القسم المطلوب
-                document.getElementById(targetPage).classList.add('active');
-                
-                // تحديث حالة التنشيط في القائمة
-                navLinks.forEach(lnk => lnk.classList.remove('active'));
-                link.classList.add('active');
-                
-                // إذا كان القسم هو القضايا، نقوم بتحميل القضايا
-                if (targetPage === 'cases') {
-                    loadCases('casesTableBody2');
-                }
-            });
-        });
+        document.getElementById('cancelAppointmentBtn').addEventListener('click', () => appointmentModal.classList.remove('active'));
+        document.getElementById('cancelClientBtn').addEventListener('click', () => clientModal.classList.remove('active'));
+        document.getElementById('cancelDocumentBtn').addEventListener('click', () => documentModal.classList.remove('active'));
+        document.getElementById('filterClose').addEventListener('click', () => filterModal.classList.remove('active'));
 
         // إدارة المفضلة
-        async function toggleFavorite(id) {
-            try {
-                const transaction = db.transaction([STORE_NAME], 'readwrite');
-                const store = transaction.objectStore(STORE_NAME);
-                const request = store.get(id);
+        favoritesBtn.addEventListener('click', () => showPage('favorites'));
+        showFavoriteCasesBtn.addEventListener('click', () => showFavoriteCases());
+        showFavoriteAppointmentsBtn.addEventListener('click', () => showFavoriteAppointments());
+        showFavoriteClientsBtn.addEventListener('click', () => showFavoriteClients());
+
+        // إدارة التصميم الغامق
+        themeSelect.addEventListener('change', function() {
+            localStorage.setItem('theme', this.value);
+            if (this.value === 'dark') {
+                document.body.classList.add('dark-mode');
+            } else {
+                document.body.classList.remove('dark-mode');
+            }
+        });
+
+        // تطبيق التصميم المحفوظ
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            themeSelect.value = savedTheme;
+            if (savedTheme === 'dark') {
+                document.body.classList.add('dark-mode');
+            }
+        }
+
+        // إدارة اللغة
+        languageSelect.addEventListener('change', function() {
+            localStorage.setItem('language', this.value);
+            // يمكن إضافة إعادة تحميل للصفحة أو تغيير النصوص ديناميكياً
+        });
+
+        const savedLanguage = localStorage.getItem('language');
+        if (savedLanguage) {
+            languageSelect.value = savedLanguage;
+        }
+
+        // إدارة التقويم
+        prevMonthBtn.addEventListener('click', () => {
+            currentMonth--;
+            if (currentMonth < 0) {
+                currentMonth = 11;
+                currentYear--;
+            }
+            loadCalendar();
+        });
+
+        nextMonthBtn.addEventListener('click', () => {
+            currentMonth++;
+            if (currentMonth > 11) {
+                currentMonth = 0;
+                currentYear++;
+            }
+            loadCalendar();
+        });
+
+        // تنسيق التاريخ
+        function formatDate(dateString) {
+            if (!dateString) return '';
+            const date = new Date(dateString);
+            return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
+        }
+
+        // فتح نماذج الإضافة/التعديل
+        function openCaseModal(id = null) {
+            editingItemId = id;
+            const modalTitle = document.getElementById('caseModalTitle');
+            
+            if (id) {
+                modalTitle.textContent = 'تعديل القضية';
+                loader.classList.add('active');
                 
-                request.onsuccess = function(event) {
-                    const caseData = event.target.result;
+                getDataById('cases', id).then(caseData => {
                     if (caseData) {
-                        caseData.favorite = !caseData.favorite;
-                        const updateRequest = store.put(caseData);
-                        
-                        updateRequest.onsuccess = function() {
-                            loadCases();
-                        };
-                        
-                        updateRequest.onerror = function(event) {
-                            console.error('Error updating case:', event.target.error);
-                        };
+                        document.getElementById('caseId').value = caseData.id;
+                        document.getElementById('caseNumber').value = caseData.number;
+                        document.getElementById('clientName').value = caseData.client;
+                        document.getElementById('court').value = caseData.court;
+                        document.getElementById('judge').value = caseData.judge;
+                        document.getElementById('caseType').value = caseData.type;
+                        document.getElementById('caseStatus').value = caseData.status;
+                        document.getElementById('registrationDate').value = caseData.registrationDate;
+                        document.getElementById('updateDate').value = caseData.updateDate || today;
+                        document.getElementById('isFavorite').checked = caseData.favorite;
+                        document.getElementById('description').value = caseData.description || '';
                     }
-                };
-                
-                request.onerror = function(event) {
-                    console.error('Error getting case:', event.target.error);
-                };
-            } catch (error) {
-                console.error('Error toggling favorite:', error);
+                    caseModal.classList.add('active');
+                    loader.classList.remove('active');
+                }).catch(error => {
+                    console.error('Error loading case:', error);
+                    loader.classList.remove('active');
+                });
+            } else {
+                modalTitle.textContent = 'تسجيل قضية جديدة';
+                caseForm.reset();
+                document.getElementById('caseId').value = '';
+                document.getElementById('registrationDate').value = today;
+                document.getElementById('updateDate').value = today;
+                caseModal.classList.add('active');
             }
         }
 
-        // تحديث الإحصائيات
-        async function updateStats() {
+        function openAppointmentModal(id = null) {
+            editingItemId = id;
+            const modalTitle = document.getElementById('appointmentModalTitle');
+            const clientSelect = document.getElementById('appointmentClient');
+            
+            // تحميل العملاء في القائمة المنسدلة
+            getAllData('clients').then(clients => {
+                clientSelect.innerHTML = '<option value="">اختر عميلاً</option>';
+                clients.forEach(client => {
+                    clientSelect.innerHTML += `<option value="${client.id}">${client.name}</option>`;
+                });
+                
+                if (id) {
+                    modalTitle.textContent = 'تعديل الموعد';
+                    loader.classList.add('active');
+                    
+                    getDataById('appointments', id).then(appointment => {
+                        if (appointment) {
+                            document.getElementById('appointmentId').value = appointment.id;
+                            document.getElementById('appointmentClient').value = appointment.clientId;
+                            document.getElementById('appointmentDate').value = appointment.date;
+                            document.getElementById('appointmentTime').value = appointment.time;
+                            document.getElementById('appointmentDuration').value = appointment.duration;
+                            document.getElementById('appointmentType').value = appointment.type;
+                            document.getElementById('appointmentUrgent').checked = appointment.urgent;
+                            document.getElementById('appointmentFavorite').checked = appointment.favorite;
+                            document.getElementById('appointmentPurpose').value = appointment.purpose;
+                        }
+                        appointmentModal.classList.add('active');
+                        loader.classList.remove('active');
+                    }).catch(error => {
+                        console.error('Error loading appointment:', error);
+                        loader.classList.remove('active');
+                    });
+                } else {
+                    modalTitle.textContent = 'إضافة موعد جديد';
+                    appointmentForm.reset();
+                    document.getElementById('appointmentId').value = '';
+                    document.getElementById('appointmentDate').value = today;
+                    document.getElementById('appointmentTime').value = '09:00';
+                    document.getElementById('appointmentDuration').value = '60';
+                    appointmentModal.classList.add('active');
+                }
+            });
+        }
+
+        function openClientModal(id = null) {
+            editingItemId = id;
+            const modalTitle = document.getElementById('clientModalTitle');
+            
+            if (id) {
+                modalTitle.textContent = 'تعديل بيانات العميل';
+                loader.classList.add('active');
+                
+                getDataById('clients', id).then(client => {
+                    if (client) {
+                        document.getElementById('clientId').value = client.id;
+                        document.getElementById('clientType').value = client.type;
+                        document.getElementById('clientFullName').value = client.name;
+                        document.getElementById('clientPhone').value = client.phone;
+                        document.getElementById('clientEmail').value = client.email || '';
+                        document.getElementById('clientAddress').value = client.address || '';
+                        document.getElementById('clientID').value = client.idNumber || '';
+                        document.getElementById('clientNotes').value = client.notes || '';
+                    }
+                    clientModal.classList.add('active');
+                    loader.classList.remove('active');
+                }).catch(error => {
+                    console.error('Error loading client:', error);
+                    loader.classList.remove('active');
+                });
+            } else {
+                modalTitle.textContent = 'إضافة عميل جديد';
+                clientForm.reset();
+                document.getElementById('clientId').value = '';
+                clientModal.classList.add('active');
+            }
+        }
+
+        function openDocumentModal(id = null) {
+            editingItemId = id;
+            const modalTitle = document.getElementById('documentModalTitle');
+            const caseSelect = document.getElementById('documentCase');
+            
+            // تحميل القضايا في القائمة المنسدلة
+            getAllData('cases').then(cases => {
+                caseSelect.innerHTML = '<option value="">اختر قضية (اختياري)</option>';
+                cases.forEach(c => {
+                    caseSelect.innerHTML += `<option value="${c.id}">${c.number} - ${c.client}</option>`;
+                });
+                
+                if (id) {
+                    modalTitle.textContent = 'تعديل المستند';
+                    loader.classList.add('active');
+                    
+                    getDataById('documents', id).then(document => {
+                        if (document) {
+                            document.getElementById('documentId').value = document.id;
+                            document.getElementById('documentName').value = document.name;
+                            document.getElementById('documentType').value = document.type;
+                            document.getElementById('documentCase').value = document.caseId || '';
+                            document.getElementById('documentDate').value = document.uploadDate;
+                            document.getElementById('documentDescription').value = document.description || '';
+                        }
+                        documentModal.classList.add('active');
+                        loader.classList.remove('active');
+                    }).catch(error => {
+                        console.error('Error loading document:', error);
+                        loader.classList.remove('active');
+                    });
+                } else {
+                    modalTitle.textContent = 'رفع مستند جديد';
+                    documentForm.reset();
+                    document.getElementById('documentId').value = '';
+                    document.getElementById('documentDate').value = today;
+                    documentModal.classList.add('active');
+                }
+            });
+        }
+
+        // معالجة إرسال النماذج
+        caseForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            loader.classList.add('active');
+            
             try {
-                const cases = await getAllCases();
-                const total = cases.length;
-                const active = cases.filter(c => c.status === "قيد النظر" || c.status === "جديدة").length;
-                const completed = cases.filter(c => c.status === "منتهية" || c.status === "مغلقة").length;
-                const favorites = cases.filter(c => c.favorite).length;
+                const newCase = {
+                    number: document.getElementById('caseNumber').value,
+                    client: document.getElementById('clientName').value,
+                    court: document.getElementById('court').value,
+                    judge: document.getElementById('judge').value,
+                    type: document.getElementById('caseType').value,
+                    status: document.getElementById('caseStatus').value,
+                    registrationDate: document.getElementById('registrationDate').value,
+                    updateDate: document.getElementById('updateDate').value,
+                    favorite: document.getElementById('isFavorite').checked,
+                    description: document.getElementById('description').value || ''
+                };
                 
-                totalCasesElement.textContent = total;
-                activeCasesElement.textContent = active;
-                completedCasesElement.textContent = completed;
-                favoritesCount.textContent = favorites;
+                if (editingItemId) {
+                    newCase.id = editingItemId;
+                }
+                
+                await saveData('cases', newCase);
+                caseModal.classList.remove('active');
+                await loadCases();
+                await updateStats();
+                alert(editingItemId ? 'تم تحديث القضية بنجاح!' : 'تم حفظ القضية بنجاح!');
+                editingItemId = null;
             } catch (error) {
-                console.error('Error updating stats:', error);
+                console.error('Error saving case:', error);
+                alert('حدث خطأ أثناء حفظ القضية. يرجى المحاولة مرة أخرى.');
+            } finally {
+                loader.classList.remove('active');
             }
-        }
+        });
 
-        // عرض القضايا في الجدول
+        appointmentForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            loader.classList.add('active');
+            
+            try {
+                const newAppointment = {
+                    clientId: document.getElementById('appointmentClient').value,
+                    date: document.getElementById('appointmentDate').value,
+                    time: document.getElementById('appointmentTime').value,
+                    duration: document.getElementById('appointmentDuration').value,
+                    type: document.getElementById('appointmentType').value,
+                    urgent: document.getElementById('appointmentUrgent').checked,
+                    favorite: document.getElementById('appointmentFavorite').checked,
+                    purpose: document.getElementById('appointmentPurpose').value
+                };
+                
+                if (editingItemId) {
+                    newAppointment.id = editingItemId;
+                }
+                
+                await saveData('appointments', newAppointment);
+                appointmentModal.classList.remove('active');
+                await loadAppointments();
+                await updateAppointmentStats();
+                alert(editingItemId ? 'تم تحديث الموعد بنجاح!' : 'تم حفظ الموعد بنجاح!');
+                editingItemId = null;
+            } catch (error) {
+                console.error('Error saving appointment:', error);
+                alert('حدث خطأ أثناء حفظ الموعد. يرجى المحاولة مرة أخرى.');
+            } finally {
+                loader.classList.remove('active');
+            }
+        });
+
+        clientForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            loader.classList.add('active');
+            
+            try {
+                const newClient = {
+                    type: document.getElementById('clientType').value,
+                    name: document.getElementById('clientFullName').value,
+                    phone: document.getElementById('clientPhone').value,
+                    email: document.getElementById('clientEmail').value || '',
+                    address: document.getElementById('clientAddress').value || '',
+                    idNumber: document.getElementById('clientID').value || '',
+                    notes: document.getElementById('clientNotes').value || ''
+                };
+                
+                if (editingItemId) {
+                    newClient.id = editingItemId;
+                }
+                
+                await saveData('clients', newClient);
+                clientModal.classList.remove('active');
+                await loadClients();
+                alert(editingItemId ? 'تم تحديث بيانات العميل بنجاح!' : 'تم حفظ العميل بنجاح!');
+                editingItemId = null;
+            } catch (error) {
+                console.error('Error saving client:', error);
+                alert('حدث خطأ أثناء حفظ العميل. يرجى المحاولة مرة أخرى.');
+            } finally {
+                loader.classList.remove('active');
+            }
+        });
+
+        documentForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            loader.classList.add('active');
+            
+            try {
+                const newDocument = {
+                    name: document.getElementById('documentName').value,
+                    type: document.getElementById('documentType').value,
+                    caseId: document.getElementById('documentCase').value || null,
+                    uploadDate: document.getElementById('documentDate').value,
+                    description: document.getElementById('documentDescription').value || ''
+                };
+                
+                if (editingItemId) {
+                    newDocument.id = editingItemId;
+                }
+                
+                await saveData('documents', newDocument);
+                documentModal.classList.remove('active');
+                await loadDocuments();
+                await updateDocumentStats();
+                alert(editingItemId ? 'تم تحديث المستند بنجاح!' : 'تم حفظ المستند بنجاح!');
+                editingItemId = null;
+            } catch (error) {
+                console.error('Error saving document:', error);
+                alert('حدث خطأ أثناء حفظ المستند. يرجى المحاولة مرة أخرى.');
+            } finally {
+                loader.classList.remove('active');
+            }
+        });
+
+        // تحميل وعرض البيانات
         async function loadCases(tableId = 'casesTableBody') {
             try {
                 const tableBody = document.getElementById(tableId);
-                const cases = await getAllCases();
+                const cases = await getAllData('cases');
                 tableBody.innerHTML = '';
                 
                 cases.forEach(c => {
@@ -2362,7 +2544,7 @@
                     else if (c.status === "منتهية" || c.status === "مغلقة") statusClass = 'closed';
                     
                     row.innerHTML = `
-                        <td class="case-id">${c.id}</td>
+                        <td class="case-id">${c.number}</td>
                         <td>${c.client}</td>
                         <td><span class="case-type ${typeClass}">${c.type}</span></td>
                         ${tableId === 'casesTableBody' ? `
@@ -2377,271 +2559,561 @@
                         </span></td>
                         <td>${formatDate(c.registrationDate)}</td>
                         ${tableId === 'casesTableBody' ? `
-                        <td><button class="favorite-btn ${c.favorite ? 'favorited' : ''}" data-id="${c.id}">
+                        <td><button class="favorite-btn ${c.favorite ? 'favorited' : ''}" data-id="${c.id}" data-type="case">
                             <i class="fas fa-star"></i>
                         </button></td>
                         ` : ''}
                         <td>
-                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                            <button class="action-btn edit-btn" data-id="${c.id}"><i class="fas fa-edit"></i></button>
-                            <button class="action-btn delete-btn" data-id="${c.id}"><i class="fas fa-trash"></i></button>
+                            <button class="action-btn view-btn" data-id="${c.id}" data-type="case"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn edit-btn" data-id="${c.id}" data-type="case"><i class="fas fa-edit"></i></button>
+                            <button class="action-btn delete-btn" data-id="${c.id}" data-type="case"><i class="fas fa-trash"></i></button>
                         </td>
                     `;
                     
                     tableBody.appendChild(row);
                 });
                 
-                // إضافة أحداث للمفضلة
-                document.querySelectorAll('.favorite-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const id = btn.getAttribute('data-id');
-                        toggleFavorite(id);
-                    });
-                });
+                // إضافة الأحداث
+                addActionEvents();
                 
-                // إضافة أحداث للحذف
-                document.querySelectorAll('.delete-btn').forEach(btn => {
-                    btn.addEventListener('click', async () => {
-                        const id = btn.getAttribute('data-id');
-                        if (confirm('هل أنت متأكد من حذف هذه القضية؟')) {
-                            loader.classList.add('active');
-                            try {
-                                await deleteCase(id);
-                                await loadCases(tableId);
-                                await updateStats();
-                            } catch (error) {
-                                console.error('Error deleting case:', error);
-                            } finally {
-                                loader.classList.remove('active');
-                            }
-                        }
-                    });
-                });
-                
-                // إضافة أحداث للتعديل
-                document.querySelectorAll('.edit-btn').forEach(btn => {
-                    btn.addEventListener('click', async () => {
-                        const id = btn.getAttribute('data-id');
-                        try {
-                            const transaction = db.transaction([STORE_NAME], 'readonly');
-                            const store = transaction.objectStore(STORE_NAME);
-                            const request = store.get(id);
-                            
-                            request.onsuccess = function(event) {
-                                const caseData = event.target.result;
-                                if (caseData) {
-                                    // تعبئة النموذج ببيانات القضية
-                                    document.getElementById('caseId').value = caseData.id;
-                                    document.getElementById('clientName').value = caseData.client;
-                                    document.getElementById('court').value = caseData.court;
-                                    document.getElementById('judge').value = caseData.judge;
-                                    document.getElementById('caseType').value = caseData.type;
-                                    document.getElementById('caseStatus').value = caseData.status;
-                                    document.getElementById('registrationDate').value = caseData.registrationDate;
-                                    document.getElementById('updateDate').value = caseData.updateDate || caseData.registrationDate;
-                                    document.getElementById('isFavorite').checked = caseData.favorite;
-                                    document.getElementById('description').value = caseData.description || '';
-                                    
-                                    caseModal.classList.add('active');
-                                }
-                            };
-                        } catch (error) {
-                            console.error('Error loading case for edit:', error);
-                        }
-                    });
-                });
-                
-                await updateStats();
+                if (tableId === 'casesTableBody') {
+                    await updateStats();
+                }
             } catch (error) {
                 console.error('Error loading cases:', error);
             }
         }
 
-        // تنسيق التاريخ
-        function formatDate(dateString) {
-            if (!dateString) return '';
-            const date = new Date(dateString);
-            return `${date.getDate()}/${date.getMonth() + 1}/${date.getFullYear()}`;
-        }
-
-        // إدارة رفع الملفات
-        fileUpload.addEventListener('click', () => {
-            caseFiles.click();
-        });
-
-        caseFiles.addEventListener('change', () => {
-            fileList.innerHTML = '';
-            if (caseFiles.files.length > 0) {
-                fileList.innerHTML = '<p><strong>الملفات المختارة:</strong></p>';
-                for (let i = 0; i < caseFiles.files.length; i++) {
-                    fileList.innerHTML += `<p>${caseFiles.files[i].name}</p>`;
-                }
-            }
-        });
-
-        // معالجة إرسال نموذج القضية
-        caseForm.addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            loader.classList.add('active');
-            
+        async function loadAppointments() {
             try {
-                const newCase = {
-                    id: document.getElementById('caseId').value,
-                    client: document.getElementById('clientName').value,
-                    court: document.getElementById('court').value,
-                    judge: document.getElementById('judge').value,
-                    type: document.getElementById('caseType').value,
-                    status: document.getElementById('caseStatus').value,
-                    registrationDate: document.getElementById('registrationDate').value,
-                    updateDate: document.getElementById('updateDate').value || document.getElementById('registrationDate').value,
-                    favorite: document.getElementById('isFavorite').checked,
-                    description: document.getElementById('description').value || ''
-                };
+                const appointments = await getAllData('appointments');
+                const today = new Date().toISOString().split('T')[0];
+                const todayAppointments = appointments.filter(a => a.date === today);
                 
-                await saveCase(newCase);
-                caseModal.classList.remove('active');
-                caseForm.reset();
-                fileList.innerHTML = '';
-                await loadCases();
-                alert('تم حفظ القضية بنجاح!');
-            } catch (error) {
-                console.error('Error saving case:', error);
-                alert('حدث خطأ أثناء حفظ القضية. يرجى المحاولة مرة أخرى.');
-            } finally {
-                loader.classList.remove('active');
-            }
-        });
-
-        // البحث عن القضايا
-        searchInput.addEventListener('input', async () => {
-            const searchTerm = searchInput.value.toLowerCase();
-            try {
-                const cases = await getAllCases();
-                casesTableBody.innerHTML = '';
+                appointmentsList.innerHTML = '';
                 
-                const filteredCases = cases.filter(c => {
-                    return c.id.toLowerCase().includes(searchTerm) || 
-                           c.client.toLowerCase().includes(searchTerm);
+                todayAppointments.forEach(app => {
+                    const appointmentCard = document.createElement('div');
+                    appointmentCard.className = `appointment-card ${app.urgent ? 'urgent' : ''}`;
+                    appointmentCard.innerHTML = `
+                        <div>
+                            <div class="appointment-time">${app.time}</div>
+                            <div class="appointment-client">${app.clientId}</div>
+                            <div class="appointment-purpose">${app.purpose}</div>
+                        </div>
+                        <div>
+                            <button class="action-btn view-btn" data-id="${app.id}" data-type="appointment"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn edit-btn" data-id="${app.id}" data-type="appointment"><i class="fas fa-edit"></i></button>
+                            <button class="action-btn delete-btn" data-id="${app.id}" data-type="appointment"><i class="fas fa-trash"></i></button>
+                        </div>
+                    `;
+                    appointmentsList.appendChild(appointmentCard);
                 });
                 
-                filteredCases.forEach(c => {
+                // إضافة الأحداث
+                addActionEvents();
+                
+                await updateAppointmentStats();
+            } catch (error) {
+                console.error('Error loading appointments:', error);
+            }
+        }
+
+        async function loadCalendar() {
+            try {
+                const firstDay = new Date(currentYear, currentMonth, 1);
+                const lastDay = new Date(currentYear, currentMonth + 1, 0);
+                const appointments = await getAllData('appointments');
+                
+                // تحديث عنوان الشهر
+                const monthNames = ["يناير", "فبراير", "مارس", "أبريل", "مايو", "يونيو",
+                                   "يوليو", "أغسطس", "سبتمبر", "أكتوبر", "نوفمبر", "ديسمبر"];
+                calendarMonthTitle.textContent = `${monthNames[currentMonth]} ${currentYear}`;
+                
+                // إنشاء أيام الأسبوع
+                calendarGrid.innerHTML = '';
+                const days = ['الأحد', 'الاثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
+                days.forEach(day => {
+                    const dayElement = document.createElement('div');
+                    dayElement.className = 'calendar-day';
+                    dayElement.textContent = day;
+                    calendarGrid.appendChild(dayElement);
+                });
+                
+                // إضافة الأيام الفارغة قبل أول يوم من الشهر
+                for (let i = 0; i < firstDay.getDay(); i++) {
+                    const emptyCell = document.createElement('div');
+                    emptyCell.className = 'calendar-cell';
+                    calendarGrid.appendChild(emptyCell);
+                }
+                
+                // إضافة أيام الشهر
+                for (let i = 1; i <= lastDay.getDate(); i++) {
+                    const dateStr = `${currentYear}-${String(currentMonth + 1).padStart(2, '0')}-${String(i).padStart(2, '0')}`;
+                    const hasAppointment = appointments.some(a => a.date === dateStr);
+                    
+                    const cell = document.createElement('div');
+                    cell.className = 'calendar-cell';
+                    if (dateStr === today) cell.classList.add('today');
+                    
+                    cell.innerHTML = `
+                        <div class="date">${i}</div>
+                        ${hasAppointment ? '<div class="appointment-badge"></div>' : ''}
+                    `;
+                    
+                    cell.addEventListener('click', () => {
+                        selectedDate = new Date(currentYear, currentMonth, i);
+                        document.getElementById('appointmentDate').value = dateStr;
+                        document.querySelectorAll('.calendar-cell.selected').forEach(c => c.classList.remove('selected'));
+                        cell.classList.add('selected');
+                    });
+                    
+                    calendarGrid.appendChild(cell);
+                }
+            } catch (error) {
+                console.error('Error loading calendar:', error);
+            }
+        }
+
+        async function loadDocuments() {
+            try {
+                const documents = await getAllData('documents');
+                const searchTerm = documentSearch.value.toLowerCase();
+                
+                // تحديث الإحصائيات
+                const pdfCount = documents.filter(d => d.type === 'PDF').length;
+                const wordCount = documents.filter(d => d.type === 'Word').length;
+                pdfDocumentsElement.textContent = pdfCount;
+                wordDocumentsElement.textContent = wordCount;
+                
+                // عرض المستندات
+                documentsList.innerHTML = '';
+                
+                documents.filter(d => {
+                    if (!searchTerm) return true;
+                    return d.name.toLowerCase().includes(searchTerm) || 
+                           (d.description && d.description.toLowerCase().includes(searchTerm));
+                }).forEach(doc => {
+                    const docCard = document.createElement('div');
+                    docCard.className = 'document-card';
+                    docCard.innerHTML = `
+                        <i class="fas fa-file-${doc.type.toLowerCase()} document-icon"></i>
+                        <div class="document-info">
+                            <div class="document-name">${doc.name}</div>
+                            <div class="document-meta">
+                                <span>حجم الملف: ${doc.size || 'غير معروف'}</span>
+                                <span>تاريخ الرفع: ${formatDate(doc.uploadDate)}</span>
+                                <span>${doc.caseId ? 'مرتبط بالقضية' : ''}</span>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="action-btn view-btn" data-id="${doc.id}" data-type="document"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn edit-btn" data-id="${doc.id}" data-type="document"><i class="fas fa-edit"></i></button>
+                            <button class="action-btn delete-btn" data-id="${doc.id}" data-type="document"><i class="fas fa-trash"></i></button>
+                        </div>
+                    `;
+                    documentsList.appendChild(docCard);
+                });
+                
+                // إضافة الأحداث
+                addActionEvents();
+            } catch (error) {
+                console.error('Error loading documents:', error);
+            }
+        }
+
+        async function loadClients() {
+            try {
+                const clients = await getAllData('clients');
+                const searchTerm = clientSearch.value.toLowerCase();
+                
+                clientsList.innerHTML = '';
+                
+                clients.filter(c => {
+                    if (!searchTerm) return true;
+                    return c.name.toLowerCase().includes(searchTerm) || 
+                           (c.phone && c.phone.includes(searchTerm)) ||
+                           (c.email && c.email.toLowerCase().includes(searchTerm));
+                }).forEach(client => {
+                    const clientCard = document.createElement('div');
+                    clientCard.className = 'client-card';
+                    clientCard.innerHTML = `
+                        <div class="client-avatar">
+                            <i class="fas fa-${client.type === 'شركة' ? 'building' : 'user'}"></i>
+                        </div>
+                        <div class="client-info">
+                            <div class="client-name">${client.name}</div>
+                            <div>${client.phone}</div>
+                            <div>${client.email || ''}</div>
+                            <div class="client-meta">
+                                <span class="client-cases">${client.casesCount || 0} قضايا</span>
+                                <span>آخر تواصل: ${client.lastContact || 'لا يوجد'}</span>
+                            </div>
+                        </div>
+                        <div>
+                            <button class="action-btn view-btn" data-id="${client.id}" data-type="client"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn edit-btn" data-id="${client.id}" data-type="client"><i class="fas fa-edit"></i></button>
+                            <button class="action-btn delete-btn" data-id="${client.id}" data-type="client"><i class="fas fa-trash"></i></button>
+                        </div>
+                    `;
+                    clientsList.appendChild(clientCard);
+                });
+                
+                // إضافة الأحداث
+                addActionEvents();
+            } catch (error) {
+                console.error('Error loading clients:', error);
+            }
+        }
+
+        async function showFavoriteCases() {
+            try {
+                const cases = await getAllData('cases');
+                const favoriteCases = cases.filter(c => c.favorite);
+                
+                favoritesContent.innerHTML = `
+                    <h3 class="section-subtitle">القضايا المفضلة</h3>
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <i class="fas fa-star stat-icon"></i>
+                            <div class="stat-value">${favoriteCases.length}</div>
+                            <div class="stat-label">قضايا مفضلة</div>
+                        </div>
+                    </div>
+                    <div style="overflow-x: auto;">
+                        <table class="cases-table">
+                            <thead>
+                                <tr>
+                                    <th>رقم القضية</th>
+                                    <th>صاحب القضية</th>
+                                    <th>نوع القضية</th>
+                                    <th>الحالة</th>
+                                    <th>تاريخ التسجيل</th>
+                                    <th>إجراءات</th>
+                                </tr>
+                            </thead>
+                            <tbody id="favoriteCasesTable">
+                                <!-- سيتم ملؤها ديناميكياً -->
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+                
+                const favoriteCasesTable = document.getElementById('favoriteCasesTable');
+                favoriteCasesTable.innerHTML = '';
+                
+                favoriteCases.forEach(c => {
                     const row = document.createElement('tr');
                     
                     let typeClass = '';
                     if (c.type === "جنائية") typeClass = 'criminal';
                     else if (c.type === "تجارية") typeClass = 'commercial';
                     else if (c.type === "أحوال شخصية") typeClass = 'personal';
-                    else if (c.type === "مدنية") typeClass = 'civil';
-                    else if (c.type === "إدارية") typeClass = 'administrative';
-                    else if (c.type === "دستورية") typeClass = 'constitutional';
                     
                     let statusClass = '';
-                    if (c.status === "جديدة") statusClass = 'new';
-                    else if (c.status === "قيد النظر") statusClass = 'in-progress';
-                    else if (c.status === "منتهية" || c.status === "مغلقة") statusClass = 'closed';
+                    if (c.status === "قيد النظر") statusClass = 'in-progress';
                     
                     row.innerHTML = `
-                        <td class="case-id">${c.id}</td>
+                        <td class="case-id">${c.number}</td>
                         <td>${c.client}</td>
                         <td><span class="case-type ${typeClass}">${c.type}</span></td>
-                        <td>${c.court}</td>
-                        <td>${c.judge}</td>
-                        <td><span class="case-status ${statusClass}">
-                            ${c.status === "قيد النظر" ? '<i class="fas fa-spinner"></i>' : 
-                              c.status === "جديدة" ? '<i class="fas fa-file"></i>' : 
-                              '<i class="fas fa-check"></i>'} 
-                            ${c.status}
-                        </span></td>
+                        <td><span class="case-status ${statusClass}">${c.status}</span></td>
                         <td>${formatDate(c.registrationDate)}</td>
-                        <td><button class="favorite-btn ${c.favorite ? 'favorited' : ''}" data-id="${c.id}">
-                            <i class="fas fa-star"></i>
-                        </button></td>
                         <td>
-                            <button class="action-btn"><i class="fas fa-eye"></i></button>
-                            <button class="action-btn edit-btn" data-id="${c.id}"><i class="fas fa-edit"></i></button>
-                            <button class="action-btn delete-btn" data-id="${c.id}"><i class="fas fa-trash"></i></button>
+                            <button class="action-btn view-btn" data-id="${c.id}" data-type="case"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn edit-btn" data-id="${c.id}" data-type="case"><i class="fas fa-edit"></i></button>
+                            <button class="action-btn delete-btn" data-id="${c.id}" data-type="case"><i class="fas fa-trash"></i></button>
                         </td>
                     `;
+                    favoriteCasesTable.appendChild(row);
+                });
+                
+                // إضافة الأحداث
+                addActionEvents();
+            } catch (error) {
+                console.error('Error loading favorite cases:', error);
+            }
+        }
+
+        async function showFavoriteAppointments() {
+            try {
+                const appointments = await getAllData('appointments');
+                const favoriteAppointments = appointments.filter(a => a.favorite);
+                
+                favoritesContent.innerHTML = `
+                    <h3 class="section-subtitle">المواعيد المفضلة</h3>
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <i class="fas fa-star stat-icon"></i>
+                            <div class="stat-value">${favoriteAppointments.length}</div>
+                            <div class="stat-label">مواعيد مفضلة</div>
+                        </div>
+                    </div>
+                    <div id="favoriteAppointmentsList">
+                        <!-- سيتم ملؤها ديناميكياً -->
+                    </div>
+                `;
+                
+                const favoriteAppointmentsList = document.getElementById('favoriteAppointmentsList');
+                favoriteAppointmentsList.innerHTML = '';
+                
+                favoriteAppointments.forEach(app => {
+                    const appointmentCard = document.createElement('div');
+                    appointmentCard.className = `appointment-card ${app.urgent ? 'urgent' : ''}`;
+                    appointmentCard.innerHTML = `
+                        <div>
+                            <div class="appointment-time">${app.time}</div>
+                            <div class="appointment-client">${app.clientId}</div>
+                            <div class="appointment-purpose">${app.purpose}</div>
+                        </div>
+                        <div>
+                            <button class="action-btn view-btn" data-id="${app.id}" data-type="appointment"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn edit-btn" data-id="${app.id}" data-type="appointment"><i class="fas fa-edit"></i></button>
+                            <button class="action-btn delete-btn" data-id="${app.id}" data-type="appointment"><i class="fas fa-trash"></i></button>
+                        </div>
+                    `;
+                    favoriteAppointmentsList.appendChild(appointmentCard);
+                });
+                
+                // إضافة الأحداث
+                addActionEvents();
+            } catch (error) {
+                console.error('Error loading favorite appointments:', error);
+            }
+        }
+
+        async function showFavoriteClients() {
+            try {
+                const clients = await getAllData('clients');
+                const favoriteClients = clients.filter(c => c.favorite);
+                
+                favoritesContent.innerHTML = `
+                    <h3 class="section-subtitle">العملاء المفضلين</h3>
+                    <div class="stats-container">
+                        <div class="stat-card">
+                            <i class="fas fa-star stat-icon"></i>
+                            <div class="stat-value">${favoriteClients.length}</div>
+                            <div class="stat-label">عملاء مفضلين</div>
+                        </div>
+                    </div>
+                    <div id="favoriteClientsList">
+                        <!-- سيتم ملؤها ديناميكياً -->
+                    </div>
+                `;
+                
+                const favoriteClientsList = document.getElementById('favoriteClientsList');
+                favoriteClientsList.innerHTML = '';
+                
+                favoriteClients.forEach(client => {
+                    const clientCard = document.createElement('div');
+                    clientCard.className = 'client-card';
+                    clientCard.innerHTML = `
+                        <div class="client-avatar">
+                            <i class="fas fa-${client.type === 'شركة' ? 'building' : 'user'}"></i>
+                        </div>
+                        <div class="client-info">
+                            <div class="client-name">${client.name}</div>
+                            <div>${client.phone}</div>
+                            <div>${client.email || ''}</div>
+                        </div>
+                        <div>
+                            <button class="action-btn view-btn" data-id="${client.id}" data-type="client"><i class="fas fa-eye"></i></button>
+                            <button class="action-btn edit-btn" data-id="${client.id}" data-type="client"><i class="fas fa-edit"></i></button>
+                            <button class="action-btn delete-btn" data-id="${client.id}" data-type="client"><i class="fas fa-trash"></i></button>
+                        </div>
+                    `;
+                    favoriteClientsList.appendChild(clientCard);
+                });
+                
+                // إضافة الأحداث
+                addActionEvents();
+            } catch (error) {
+                console.error('Error loading favorite clients:', error);
+            }
+        }
+
+        // تحديث الإحصائيات
+        async function updateStats() {
+            try {
+                const cases = await getAllData('cases');
+                const total = cases.length;
+                const active = cases.filter(c => c.status === "قيد النظر" || c.status === "جديدة").length;
+                const completed = cases.filter(c => c.status === "منتهية" || c.status === "مغلقة").length;
+                const favorites = cases.filter(c => c.favorite).length;
+                
+                totalCasesElement.textContent = total;
+                activeCasesElement.textContent = active;
+                completedCasesElement.textContent = completed;
+                favoritesCount.textContent = favorites;
+            } catch (error) {
+                console.error('Error updating stats:', error);
+            }
+        }
+
+        async function updateAppointmentStats() {
+            try {
+                const appointments = await getAllData('appointments');
+                const today = new Date().toISOString().split('T')[0];
+                const todayAppointments = appointments.filter(a => a.date === today).length;
+                
+                const upcomingAppointments = appointments.filter(a => {
+                    const appDate = new Date(a.date);
+                    const today = new Date();
+                    today.setHours(0,0,0,0);
+                    return appDate > today;
+                }).length;
+                
+                todayAppointmentsElement.textContent = todayAppointments;
+                upcomingAppointmentsElement.textContent = upcomingAppointments;
+            } catch (error) {
+                console.error('Error updating appointment stats:', error);
+            }
+        }
+
+        async function updateDocumentStats() {
+            try {
+                const documents = await getAllData('documents');
+                const pdfCount = documents.filter(d => d.type === 'PDF').length;
+                const wordCount = documents.filter(d => d.type === 'Word').length;
+                
+                pdfDocumentsElement.textContent = pdfCount;
+                wordDocumentsElement.textContent = wordCount;
+            } catch (error) {
+                console.error('Error updating document stats:', error);
+            }
+        }
+
+        // إضافة الأحداث للأزرار الديناميكية
+        function addActionEvents() {
+            // أحداث التعديل
+            document.querySelectorAll('.edit-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const id = btn.getAttribute('data-id');
+                    const type = btn.getAttribute('data-type');
                     
-                    casesTableBody.appendChild(row);
+                    switch(type) {
+                        case 'case':
+                            openCaseModal(parseInt(id));
+                            break;
+                        case 'appointment':
+                            openAppointmentModal(parseInt(id));
+                            break;
+                        case 'client':
+                            openClientModal(parseInt(id));
+                            break;
+                        case 'document':
+                            openDocumentModal(parseInt(id));
+                            break;
+                    }
                 });
-                
-                // إعادة ربط الأحداث
-                document.querySelectorAll('.favorite-btn').forEach(btn => {
-                    btn.addEventListener('click', () => {
-                        const id = btn.getAttribute('data-id');
-                        toggleFavorite(id);
-                    });
+            });
+            
+            // أحداث الحذف
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const id = btn.getAttribute('data-id');
+                    const type = btn.getAttribute('data-type');
+                    const typeName = {
+                        'case': 'القضية',
+                        'appointment': 'الموعد',
+                        'client': 'العميل',
+                        'document': 'المستند'
+                    }[type];
+                    
+                    if (confirm(`هل أنت متأكد من حذف ${typeName}؟`)) {
+                        loader.classList.add('active');
+                        try {
+                            await deleteData(type + 's', parseInt(id));
+                            
+                            // إعادة تحميل البيانات حسب الصفحة الحالية
+                            switch(currentPage) {
+                                case 'home':
+                                case 'cases':
+                                    await loadCases();
+                                    break;
+                                case 'appointments':
+                                    await loadAppointments();
+                                    await loadCalendar();
+                                    break;
+                                case 'documents':
+                                    await loadDocuments();
+                                    break;
+                                case 'clients':
+                                    await loadClients();
+                                    break;
+                                case 'favorites':
+                                    switch(favoritesContent.querySelector('h3').textContent) {
+                                        case 'القضايا المفضلة':
+                                            await showFavoriteCases();
+                                            break;
+                                        case 'المواعيد المفضلة':
+                                            await showFavoriteAppointments();
+                                            break;
+                                        case 'العملاء المفضلين':
+                                            await showFavoriteClients();
+                                            break;
+                                    }
+                                    break;
+                            }
+                            
+                            if (type === 'case') await updateStats();
+                            if (type === 'appointment') await updateAppointmentStats();
+                            if (type === 'document') await updateDocumentStats();
+                            
+                            alert(`تم حذف ${typeName} بنجاح!`);
+                        } catch (error) {
+                            console.error(`Error deleting ${type}:`, error);
+                            alert(`حدث خطأ أثناء حذف ${typeName}. يرجى المحاولة مرة أخرى.`);
+                        } finally {
+                            loader.classList.remove('active');
+                        }
+                    }
                 });
-                
-                document.querySelectorAll('.delete-btn').forEach(btn => {
-                    btn.addEventListener('click', async () => {
-                        const id = btn.getAttribute('data-id');
-                        if (confirm('هل أنت متأكد من حذف هذه القضية؟')) {
-                            loader.classList.add('active');
-                            try {
-                                await deleteCase(id);
-                                await loadCases();
-                            } catch (error) {
-                                console.error('Error deleting case:', error);
-                            } finally {
-                                loader.classList.remove('active');
+            });
+            
+            // أحداث المفضلة
+            document.querySelectorAll('.favorite-btn').forEach(btn => {
+                btn.addEventListener('click', async () => {
+                    const id = btn.getAttribute('data-id');
+                    const type = btn.getAttribute('data-type');
+                    
+                    try {
+                        const data = await getDataById(type + 's', parseInt(id));
+                        data.favorite = !data.favorite;
+                        await saveData(type + 's', data);
+                        
+                        // تحديث الواجهة
+                        btn.classList.toggle('favorited', data.favorite);
+                        
+                        // تحديث العدادات
+                        if (type === 'case') await updateStats();
+                        if (type === 'appointment') await updateAppointmentStats();
+                        
+                        // إذا كنا في صفحة المفضلة، إعادة تحميل المحتوى
+                        if (currentPage === 'favorites') {
+                            switch(favoritesContent.querySelector('h3').textContent) {
+                                case 'القضايا المفضلة':
+                                    await showFavoriteCases();
+                                    break;
+                                case 'المواعيد المفضلة':
+                                    await showFavoriteAppointments();
+                                    break;
+                                case 'العملاء المفضلين':
+                                    await showFavoriteClients();
+                                    break;
                             }
                         }
-                    });
+                    } catch (error) {
+                        console.error('Error toggling favorite:', error);
+                    }
                 });
-                
-                document.querySelectorAll('.edit-btn').forEach(btn => {
-                    btn.addEventListener('click', async () => {
-                        const id = btn.getAttribute('data-id');
-                        try {
-                            const transaction = db.transaction([STORE_NAME], 'readonly');
-                            const store = transaction.objectStore(STORE_NAME);
-                            const request = store.get(id);
-                            
-                            request.onsuccess = function(event) {
-                                const caseData = event.target.result;
-                                if (caseData) {
-                                    document.getElementById('caseId').value = caseData.id;
-                                    document.getElementById('clientName').value = caseData.client;
-                                    document.getElementById('court').value = caseData.court;
-                                    document.getElementById('judge').value = caseData.judge;
-                                    document.getElementById('caseType').value = caseData.type;
-                                    document.getElementById('caseStatus').value = caseData.status;
-                                    document.getElementById('registrationDate').value = caseData.registrationDate;
-                                    document.getElementById('updateDate').value = caseData.updateDate || caseData.registrationDate;
-                                    document.getElementById('isFavorite').checked = caseData.favorite;
-                                    document.getElementById('description').value = caseData.description || '';
-                                    
-                                    caseModal.classList.add('active');
-                                }
-                            };
-                        } catch (error) {
-                            console.error('Error loading case for edit:', error);
-                        }
-                    });
-                });
-                
-            } catch (error) {
-                console.error('Error searching cases:', error);
-            }
-        });
+            });
+        }
 
-        // تهيئة التاريخ الحالي
-        const today = new Date().toISOString().split('T')[0];
-        document.getElementById('registrationDate').value = today;
-        document.getElementById('updateDate').value = today;
-        document.getElementById('appointmentDate').value = today;
-
-        // إدارة التصميم الغامق
-        themeSelect.addEventListener('change', function() {
-            if (this.value === 'dark') {
-                document.body.classList.add('dark-mode');
-            } else {
-                document.body.classList.remove('dark-mode');
-            }
-        });
+        // البحث
+        searchInput.addEventListener('input', () => loadCases());
+        documentSearch.addEventListener('input', () => loadDocuments());
+        clientSearch.addEventListener('input', () => loadClients());
 
         // PWA: إدارة التثبيت
         window.addEventListener('beforeinstallprompt', (e) => {
@@ -2711,11 +3183,11 @@
                 await initDB();
                 
                 // إضافة بعض البيانات الأولية إذا لم يكن هناك بيانات
-                const existingCases = await getAllCases();
+                const existingCases = await getAllData('cases');
                 if (existingCases.length === 0) {
                     const initialCases = [
                         {
-                            id: "C-2023-145",
+                            number: "C-2023-145",
                             client: "محمد أحمد عبد الله",
                             type: "جنائية",
                             court: "محكمة جنايات القاهرة",
@@ -2726,7 +3198,7 @@
                             favorite: true
                         },
                         {
-                            id: "C-2023-128",
+                            number: "C-2023-128",
                             client: "شركة التقنية المتطورة",
                             type: "تجارية",
                             court: "محكمة التجارية",
@@ -2735,26 +3207,78 @@
                             registrationDate: "2023-03-05",
                             updateDate: "2023-08-12",
                             favorite: false
-                        },
-                        {
-                            id: "C-2023-112",
-                            client: "سارة خالد حسين",
-                            type: "أحوال شخصية",
-                            court: "محكمة الأسرة",
-                            judge: "القاضي نادية عبد الرحمن",
-                            status: "منتهية",
-                            registrationDate: "2023-02-22",
-                            updateDate: "2023-07-15",
-                            favorite: false
                         }
                     ];
                     
                     for (const caseData of initialCases) {
-                        await saveCase(caseData);
+                        await saveData('cases', caseData);
                     }
                 }
                 
+                const existingAppointments = await getAllData('appointments');
+                if (existingAppointments.length === 0) {
+                    const initialAppointments = [
+                        {
+                            clientId: "1",
+                            date: today,
+                            time: "09:00",
+                            duration: 60,
+                            type: "استشارة",
+                            urgent: false,
+                            favorite: false,
+                            purpose: "مراجعة وثائق القضية الجنائية"
+                        }
+                    ];
+                    
+                    for (const appointment of initialAppointments) {
+                        await saveData('appointments', appointment);
+                    }
+                }
+                
+                const existingClients = await getAllData('clients');
+                if (existingClients.length === 0) {
+                    const initialClients = [
+                        {
+                            type: "فرد",
+                            name: "محمد أحمد عبد الله",
+                            phone: "+966123456789",
+                            email: "mohamed@example.com",
+                            favorite: true
+                        },
+                        {
+                            type: "شركة",
+                            name: "شركة التقنية المتطورة",
+                            phone: "+966112233445",
+                            email: "contact@tech-advanced.com",
+                            favorite: false
+                        }
+                    ];
+                    
+                    for (const client of initialClients) {
+                        await saveData('clients', client);
+                    }
+                }
+                
+                const existingDocuments = await getAllData('documents');
+                if (existingDocuments.length === 0) {
+                    const initialDocuments = [
+                        {
+                            name: "مذكرة دفاع - القضية الجنائية رقم C-2023-145.pdf",
+                            type: "PDF",
+                            uploadDate: today,
+                            description: "مذكرة دفاع في القضية الجنائية"
+                        }
+                    ];
+                    
+                    for (const document of initialDocuments) {
+                        await saveData('documents', document);
+                    }
+                }
+                
+                // تحميل الصفحة الرئيسية
                 await loadCases();
+                await updateAppointmentStats();
+                await updateDocumentStats();
                 
                 // إظهار حالة الاتصال
                 if (!navigator.onLine) {
