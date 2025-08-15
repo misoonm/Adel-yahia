@@ -42,7 +42,6 @@
             padding: 0 20px;
         }
 
-        /* التصميم العصري للشريط العلوي */
         header {
             background: linear-gradient(135deg, var(--primary), var(--secondary));
             color: white;
@@ -105,7 +104,6 @@
             font-size: 1.2rem;
         }
 
-        /* تصميم بطاقات الإحصائيات */
         .stats-section {
             padding: 40px 0;
         }
@@ -202,7 +200,6 @@
             color: var(--dark);
         }
 
-        /* تصميم أدوات البحث والفلترة */
         .tools-section {
             background: white;
             border-radius: var(--border-radius);
@@ -277,7 +274,6 @@
             background: #c53030;
         }
 
-        /* تصميم جدول القضايا */
         .cases-section {
             margin-bottom: 50px;
         }
@@ -407,7 +403,6 @@
             color: var(--accent);
         }
 
-        /* تصميم نموذج إضافة قضية */
         .modal {
             display: none;
             position: fixed;
@@ -566,7 +561,6 @@
             font-size: 1.1rem;
         }
 
-        /* إظهار القائمة على الشاشات الكبيرة */
         @media (min-width: 693px) {
             .nav-links {
                 display: flex;
@@ -577,7 +571,6 @@
             }
         }
 
-        /* تصميم متجاوب */
         @media (max-width: 692px) {
             .tools-grid {
                 grid-template-columns: 1fr;
@@ -620,7 +613,6 @@
             }
         }
 
-        /* تصميم القائمة الجانبية للجوال */
         .mobile-menu-btn {
             display: flex;
             background: none;
@@ -674,7 +666,6 @@
             width: 25px;
         }
 
-        /* إضافة بعض الرسوم المتحركة */
         .fade-in {
             animation: fadeIn 0.6s ease;
         }
@@ -694,7 +685,6 @@
             100% { transform: scale(1); }
         }
 
-        /* فلتر القضايا */
         .filter-modal {
             display: none;
             position: fixed;
@@ -765,7 +755,6 @@
             gap: 15px;
         }
 
-        /* مؤشر التحميل */
         .loader {
             display: none;
             position: fixed;
@@ -797,7 +786,6 @@
             100% { transform: rotate(360deg); }
         }
 
-        /* زر المفضلة في الهيدر */
         .favorites-btn {
             position: relative;
             background: none;
@@ -823,7 +811,6 @@
             justify-content: center;
         }
         
-        /* إضافة أنماط لتطبيق PWA */
         .install-btn {
             position: fixed;
             bottom: 20px;
@@ -899,7 +886,6 @@
             font-weight: 500;
         }
         
-        /* تحسينات للقائمة الجانبية */
         .mobile-nav {
             overflow-y: auto;
         }
@@ -922,7 +908,6 @@
             color: var(--primary);
         }
         
-        /* أقسام الصفحات */
         .page-section {
             display: none;
             padding: 20px 0;
@@ -933,7 +918,6 @@
             animation: fadeIn 0.6s ease;
         }
         
-        /* تقويم المواعيد */
         .calendar-section {
             background: white;
             border-radius: var(--border-radius);
@@ -1003,7 +987,6 @@
             margin-top: 3px;
         }
         
-        /* بطاقات المواعيد */
         .appointment-card {
             background: white;
             border-radius: var(--border-radius);
@@ -1035,7 +1018,6 @@
             font-size: 0.9rem;
         }
         
-        /* بطاقات المستندات */
         .document-card {
             background: white;
             border-radius: var(--border-radius);
@@ -1068,7 +1050,6 @@
             font-size: 0.9rem;
         }
         
-        /* بطاقات العملاء */
         .client-card {
             background: white;
             border-radius: var(--border-radius);
@@ -1116,7 +1097,6 @@
             font-size: 0.9rem;
         }
         
-        /* إعدادات التصميم الغامق */
         .dark-mode {
             background: #1a202c;
             color: #f7fafc;
@@ -1198,7 +1178,6 @@
             background: #4a5568;
         }
         
-        /* أنماط التبويبات الجديدة */
         .tabs-container {
             margin: 30px 0;
             background: white;
@@ -1248,7 +1227,6 @@
             display: block;
         }
         
-        /* تحسينات رفع الملفات */
         .file-item {
             background: #f8fafc;
             border-radius: 8px;
@@ -1271,7 +1249,6 @@
             gap: 10px;
         }
         
-        /* تنزيل الملفات */
         .download-btn {
             background: none;
             border: none;
@@ -1280,18 +1257,16 @@
             font-size: 1.1rem;
         }
         
-        /* شريط التنقل القابل للتحريك */
         .tabs-header {
             overflow-x: auto;
             -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
+            scrollbar-width: none;
         }
         
         .tabs-header::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
+            display: none;
         }
         
-        /* النسخ الاحتياطي */
         .backup-actions {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -1312,7 +1287,6 @@
             color: var(--primary);
         }
         
-        /* تحسينات الجوال للشريط العلوي */
         .header-content {
             position: relative;
         }
@@ -1344,7 +1318,7 @@
                     <div style="background: #e2e8f0; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
                         <i class="fas fa-balance-scale" style="font-size: 2rem; color: var(--primary);"></i>
                     </div>
-                    <h1>المحامي عادل يحيى</h1>
+                    <h1>SeaStar ادارة القضايا </h1>
                 </div>
                 
                 <nav class="nav-links">
@@ -1375,11 +1349,17 @@
         <div class="mobile-nav-links">
             <a href="#" class="active nav-link" data-page="home"><i class="fas fa-home"></i> الرئيسية</a>
             <a href="#" class="nav-link" data-page="favorites"><i class="fas fa-star"></i> المفضلة</a>
+            <!-- تبويبات القائمة الجانبية للهاتف المحمول -->
+            <a href="#" class="nav-link" data-page="home" data-tab="cases"><i class="fas fa-gavel"></i> القضايا</a>
+            <a href="#" class="nav-link" data-page="home" data-tab="appointments"><i class="fas fa-calendar"></i> المواعيد</a>
+            <a href="#" class="nav-link" data-page="home" data-tab="documents"><i class="fas fa-file-contract"></i> المستندات</a>
+            <a href="#" class="nav-link" data-page="home" data-tab="clients"><i class="fas fa-user"></i> العملاء</a>
+            <a href="#" class="nav-link" data-page="home" data-tab="settings"><i class="fas fa-cog"></i> الإعدادات</a>
             
             <div class="install-notice">
-                <p>لتجربة أفضل، قم بتثبيت التطبيق على جهازك</p>
-                <a href="#" class="mobile-install-btn" id="mobileInstallBtn">
-                    <i class="fas fa-download"></i> تثبيت التطبيق
+                <p>تم تطوير هذا التطبيق بواسطة مؤسسة SeaStar،   لشراء التطبيق تواصل بقسم المبيعات </p>
+                <a href="tel:779168887" class="mobile-install-btn" id="mobileInstallBtn">
+                    <i class="fas fa-download"></i>  شراء
                 </a>
             </div>
         </div>
@@ -1631,16 +1611,7 @@
                 </div>
             </div>
             
-            <div class="pwa-instructions">
-                <h3><i class="fas fa-mobile-alt"></i> تثبيت التطبيق على جهازك</h3>
-                <p>لتجربة أفضل، يمكنك تثبيت هذا التطبيق على جهازك الأندرويد:</p>
-                <ol>
-                    <li>اضغط على زر القائمة في المتصفح (ثلاث نقاط)</li>
-                    <li>اختر "تثبيت التطبيق" أو "Install App"</li>
-                    <li>اضغط على "تثبيت" في النافذة المنبثقة</li>
-                </ol>
-                <p>سيتم إنشاء أيقونة للتطبيق على شاشتك الرئيسية وسيعمل كتطبيق عادي.</p>
-            </div>
+        
         </div>
     </div>
 
@@ -2208,6 +2179,7 @@
         let editingItemId = null;
         let currentCaseFiles = [];
         let currentDocumentFile = null;
+        let deferredPrompt = null;
 
         // تهيئة التاريخ الحالي
         const today = new Date().toISOString().split('T')[0];
@@ -2222,6 +2194,18 @@
                 e.preventDefault();
                 const page = link.getAttribute('data-page');
                 showPage(page);
+                
+                // إذا كان الرابط يحتوي على تبويب
+                const tab = link.getAttribute('data-tab');
+                if (tab) {
+                    const tabButton = document.querySelector(`.tab-btn[data-tab="${tab}"]`);
+                    if (tabButton) {
+                        tabButton.click();
+                    }
+                }
+                
+                // إغلاق القائمة الجانبية للجوال
+                mobileNav.classList.remove('active');
             });
         });
 
@@ -2257,13 +2241,6 @@
         // فتح وإغلاق القائمة الجانبية للجوال
         mobileMenuBtn.addEventListener('click', () => {
             mobileNav.classList.toggle('active');
-        });
-
-        // إغلاق القائمة عند النقر على رابط
-        document.querySelectorAll('.mobile-nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-            });
         });
 
         // فتح وإغلاق النماذج
@@ -2317,7 +2294,6 @@
         // إدارة اللغة
         languageSelect.addEventListener('change', function() {
             localStorage.setItem('language', this.value);
-            // يمكن إضافة إعادة تحميل للصفحة أو تغيير النصوص ديناميكياً
         });
 
         const savedLanguage = localStorage.getItem('language');
@@ -3264,7 +3240,6 @@
                     const id = btn.getAttribute('data-id');
                     const doc = await getDataById('documents', parseInt(id));
                     alert(`سيتم تنزيل المستند: ${doc.name}`);
-                    // في التطبيق الحقيقي، هنا سيتم تنزيل الملف
                 });
             });
         }
@@ -3349,7 +3324,7 @@
                                 }
                                 
                                 alert('تم استعادة النسخة الاحتياطية بنجاح!');
-                                location.reload(); // إعادة تحميل الصفحة لتحديث البيانات
+                                location.reload();
                             } catch (error) {
                                 console.error('Error restoring backup:', error);
                                 alert('حدث خطأ أثناء استعادة النسخة الاحتياطية');
